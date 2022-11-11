@@ -6,8 +6,11 @@ public class CameraUrmaresteObiectul : MonoBehaviour
     [SerializeField] private Vector3 _pozitiaFataDeUrmaritor;
     [SerializeField] private float _vitezaDeUrmarire = 0.1f;
     
-    private void FixedUpdate()
+    private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(_peCineUrmareste.position.x, _peCineUrmareste.position.y, _peCineUrmareste.position.z) + _pozitiaFataDeUrmaritor, _vitezaDeUrmarire);
+        transform.position = Vector3.Lerp(
+            transform.position, 
+            new Vector3(_peCineUrmareste.position.x + _pozitiaFataDeUrmaritor.x, _peCineUrmareste.position.y, _peCineUrmareste.position.z) + _pozitiaFataDeUrmaritor, 
+            _vitezaDeUrmarire);
     }
 }

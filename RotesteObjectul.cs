@@ -1,24 +1,24 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class RotateObject : MonoBehaviour
+public class RotesteObjectul : MonoBehaviour
 {
     private enum AxisRotate { X, Y, Z};
 
-    [SerializeField] private int _rotationSpeed = 100;
-    [SerializeField] private bool _rotationClockWise = true;
-    [SerializeField] private AxisRotate _axisRotate;
+    [SerializeField] private int _vitezaRotatie = 100;
+    [SerializeField] private bool _rotatieSensAcelorCeasornice = true;
+    [SerializeField] private AxisRotate _axaRotatie;
 
     private int _rotationAngles = 0;
 
     void FixedUpdate()
     {
-        if (_rotationClockWise)
-            _rotationAngles += _rotationSpeed;
+        if (_rotatieSensAcelorCeasornice)
+            _rotationAngles += _vitezaRotatie;
         else
-            _rotationAngles -= _rotationSpeed;
+            _rotationAngles -= _vitezaRotatie;
 
-        switch (_axisRotate)
+        switch (_axaRotatie)
         {
             case AxisRotate.X:
                 transform.eulerAngles = new Vector3( _rotationAngles * Time.deltaTime, 0, 0);
