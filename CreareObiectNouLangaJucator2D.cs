@@ -16,10 +16,14 @@ public class CreareObiectNouLangaJucator2D : MonoBehaviour
     [SerializeField] private float _distantaDintreObiecteleCreate;
     
     private float _monitoringObjectPosition = 0;
+    private float _playerPositionStartX = 0;
+    private float _playerPositionStartY = 0;
 
     private void Start()
     {
         InstantiateObject();
+        _playerPositionStartX = _personajul.position.x;
+        _playerPositionStartY = _personajul.position.y;
     }
 
     private void Update()
@@ -27,19 +31,19 @@ public class CreareObiectNouLangaJucator2D : MonoBehaviour
         switch (_diretiaCreareObiect)
         {
             case DirectiaCreareObiect2D.Sus:
-                if (_monitoringObjectPosition <= _personajul.position.x)
-                    InstantiateObject();
-                break;
-            case DirectiaCreareObiect2D.Jos:
-                if (_monitoringObjectPosition <= System.Math.Abs(_personajul.position.x))
-                    InstantiateObject();
-                break;
-            case DirectiaCreareObiect2D.Dreapta:
                 if (_monitoringObjectPosition <= _personajul.position.y)
                     InstantiateObject();
                 break;
-            case DirectiaCreareObiect2D.Stanga:
+            case DirectiaCreareObiect2D.Jos:
                 if (_monitoringObjectPosition <= System.Math.Abs(_personajul.position.y))
+                    InstantiateObject();
+                break;
+            case DirectiaCreareObiect2D.Dreapta:
+                if (_monitoringObjectPosition <= _personajul.position.x)
+                    InstantiateObject();
+                break;
+            case DirectiaCreareObiect2D.Stanga:
+                if (_monitoringObjectPosition <= System.Math.Abs(_personajul.position.x))
                     InstantiateObject();
                 break;
             default:
@@ -72,26 +76,26 @@ public class CreareObiectNouLangaJucator2D : MonoBehaviour
         {
             case DirectiaCreareObiect2D.Sus:
                 tmpVector3 = new Vector3(
-                    _personajul.position.x,
+                    _playerPositionStartX,
                     _personajul.position.y + _distantaDintreObiecteleCreate,
                     _personajul.position.z);
                 break;
             case DirectiaCreareObiect2D.Jos:
                 tmpVector3 = new Vector3(
-                    _personajul.position.x,
+                    _playerPositionStartX,
                     _personajul.position.y - _distantaDintreObiecteleCreate,
                     _personajul.position.z);
                 break;
             case DirectiaCreareObiect2D.Dreapta:
                 tmpVector3 = new Vector3(
                     _personajul.position.x + _distantaDintreObiecteleCreate,
-                    _personajul.position.y,
+                    _playerPositionStartY,
                     _personajul.position.z);
                 break;
             case DirectiaCreareObiect2D.Stanga:
                 tmpVector3 = new Vector3(
                     _personajul.position.x - _distantaDintreObiecteleCreate,
-                    _personajul.position.y,
+                    _playerPositionStartY,
                     _personajul.position.z);
                 break;
             default:
