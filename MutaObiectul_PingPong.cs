@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class MutaObiectul : MonoBehaviour
+public class MutaObiectul_PingPong : MonoBehaviour
 {
     [SerializeField] private Vector3 _directiaDeplasare;
     [SerializeField] private float _vitezaDeplasare = 0.8f;

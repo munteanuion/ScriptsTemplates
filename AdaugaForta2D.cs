@@ -7,7 +7,7 @@ public class AdaugaForta2D : MonoBehaviour
 
     [SerializeField] private float _forta = 1;
     [SerializeField] private Direction _directia = Direction.Sus;
-    [SerializeField] private KeyCode _butonulAdaugaForta;
+    [SerializeField] public KeyCode _butonulAdaugaForta;
 
     private Rigidbody2D _rigidbody;
 

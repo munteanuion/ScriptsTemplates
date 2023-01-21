@@ -14,6 +14,9 @@ public class CreareObiectNouLangaJucator2D : MonoBehaviour
     [SerializeField] private DirectiaCreareObiect2D _diretiaCreareObiect;
     [SerializeField] private GameObject[] _obstaculePrefaburi;
     [SerializeField] private float _distantaDintreObiecteleCreate;
+    [Header("Instructiunea in descriere.")]
+    [Tooltip("Valoarea inaltimei unde este situata linia pe care vor fi create obiectele pentru directia Dreapta, Stanga. Iar pentru Sus, Jos va fi latimea.")]
+    [SerializeField] private float _valoareaAxei;
     
     private float _monitoringObjectPosition = 0;
     private float _playerPositionStartX = 0;
@@ -76,26 +79,26 @@ public class CreareObiectNouLangaJucator2D : MonoBehaviour
         {
             case DirectiaCreareObiect2D.Sus:
                 tmpVector3 = new Vector3(
-                    _playerPositionStartX,
+                    _valoareaAxei,
                     _personajul.position.y + _distantaDintreObiecteleCreate,
                     _personajul.position.z);
                 break;
             case DirectiaCreareObiect2D.Jos:
                 tmpVector3 = new Vector3(
-                    _playerPositionStartX,
+                    _valoareaAxei,
                     _personajul.position.y - _distantaDintreObiecteleCreate,
                     _personajul.position.z);
                 break;
             case DirectiaCreareObiect2D.Dreapta:
                 tmpVector3 = new Vector3(
                     _personajul.position.x + _distantaDintreObiecteleCreate,
-                    _playerPositionStartY,
+                    _valoareaAxei,
                     _personajul.position.z);
                 break;
             case DirectiaCreareObiect2D.Stanga:
                 tmpVector3 = new Vector3(
                     _personajul.position.x - _distantaDintreObiecteleCreate,
-                    _playerPositionStartY,
+                    _valoareaAxei,
                     _personajul.position.z);
                 break;
             default:

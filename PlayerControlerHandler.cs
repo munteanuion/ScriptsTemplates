@@ -18,7 +18,7 @@ public class PlayerControlerHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(_adaugaForta2DComponent.GetButtonAddForce()) && _countJumpPosible > 0)
+        if (Input.GetKeyDown(_adaugaForta2DComponent._butonulAdaugaForta) && _countJumpPosible > 0)
         {
             JumpPlayer();
         }
