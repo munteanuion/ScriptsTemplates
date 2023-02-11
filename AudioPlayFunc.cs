@@ -16,11 +16,8 @@ public class AudioPlayFunc : MonoBehaviour
 
     public void PlaySound()
     {
-        if (GameManager.Instance._canPlaySoundSetting)
-        {
-            audioSource.clip = audioClip;
-            audioSource.Play();
-        }
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
     public void PlaySound(float invokeTime)
     {
