@@ -4,12 +4,14 @@ public class AudioPlayFunc : MonoBehaviour
 {
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private KeyCode _buttonulPornesteSunetul;
 
-    private void Awake()
+    private void Update()
     {
-        audioSource.enabled = false;
-
-        Invoke("EnableAudioSource", 1f);
+        if (Input.GetKeyDown(_buttonulPornesteSunetul))
+        {
+            PlaySound();
+        }
     }
 
     public void PlaySound()
@@ -23,10 +25,5 @@ public class AudioPlayFunc : MonoBehaviour
     public void PlaySound(float invokeTime)
     {
         Invoke("PlaySound", invokeTime);
-    }
-
-    private void EnableAudioSource()
-    {
-        audioSource.enabled = true;
     }
 }
