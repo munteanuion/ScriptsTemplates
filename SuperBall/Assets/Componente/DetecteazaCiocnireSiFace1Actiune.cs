@@ -12,6 +12,7 @@ public class DetecteazaCiocnireSiFace1Actiune : MonoBehaviour
     [SerializeField] private TipObiectCollider _tipObiectCollider;
     [SerializeField] private string _numeTagIntersectie;
     [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameObject _dezactiveazaButonInvizibil;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -38,6 +39,9 @@ public class DetecteazaCiocnireSiFace1Actiune : MonoBehaviour
     private void GameOver()
     {
         Time.timeScale = 0f;
-        _gameOverPanel.SetActive(true);
+        if (_gameOverPanel != null)
+            _gameOverPanel.SetActive(true);
+        if (_dezactiveazaButonInvizibil != null)
+            _dezactiveazaButonInvizibil.SetActive(false);
     }
 }

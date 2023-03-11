@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -7,16 +9,18 @@ public class GameController : MonoBehaviour
     public Transform minPosition;
     public float fortaAdaugata;
     public float timpMinimIntreForta = 1f;
-    public bool adaugaFortaFix = false;
-    public Component scoreComponent;
-    public Component highScoreComponent;
+    public bool adaugaFortaFix = false; 
+    public TextMeshProUGUI scoreComponentDinJoc;
+    public TextMeshProUGUI scoreComponentDinGameOver;
+    public TextMeshProUGUI highScoreComponentDinJoc;
+    public TextMeshProUGUI highScoreComponentDinGameOver;
     [SerializeField] public KeyCode _butonulAdaugaForta;
 
     private float forceMultiplier = 1f;
     private int score = 0;
     private int highScore = 0;
-    private float timeSinceLastForceAdded = 0f;
-    private bool hasFirstShoot = false;
+    private float timeSinceLastForceAdded = 0f; 
+    private bool hasFirstShoot = false; 
 
     private const string HighScoreKey = "HighScore";
 
@@ -30,7 +34,7 @@ public class GameController : MonoBehaviour
 
     public void AddForceToBall()
     {
-        if (timeSinceLastForceAdded >= timpMinimIntreForta)
+        if (timeSinceLastForceAdded >= timpMinimIntreForta) 
         {
             float distanceToMin = Mathf.Abs(ballRigidbody.position.y - minPosition.position.y);
             float distanceToMax = Mathf.Abs(ballRigidbody.position.y - maxPosition.position.y);
@@ -102,28 +106,24 @@ public class GameController : MonoBehaviour
     }
     private void UpdateScoreText()
     {
-        if (scoreComponent != null)
+        if (scoreComponentDinJoc != null)
         {
-            if (scoreComponent is UnityEngine.UI.Text)
-            {
-                ((UnityEngine.UI.Text)scoreComponent).text = "Score: " + score.ToString();
-            }
-            else if (scoreComponent is TMPro.TMP_Text)
-            {
-                ((TMPro.TMP_Text)scoreComponent).text = "Score: " + score.ToString();
-            }
+            (scoreComponentDinJoc).text = "Score: " + score.ToString();
         }
 
-        if (highScoreComponent != null)
+        if (highScoreComponentDinJoc != null)
         {
-            if (highScoreComponent is UnityEngine.UI.Text)
-            {
-                ((UnityEngine.UI.Text)highScoreComponent).text = "High Score: " + highScore.ToString();
-            }
-            else if (highScoreComponent is TMPro.TMP_Text)
-            {
-                ((TMPro.TMP_Text)highScoreComponent).text = "High Score: " + highScore.ToString();
-            }
+            (highScoreComponentDinJoc).text = "High Score: " + highScore.ToString();
+        }
+
+        if (scoreComponentDinGameOver != null)
+        {
+            (scoreComponentDinGameOver).text = "Score: " + score.ToString();
+        }
+
+        if (highScoreComponentDinGameOver != null)
+        {
+            (highScoreComponentDinGameOver).text = "High Score: " + highScore.ToString();
         }
     }
 }
