@@ -133,9 +133,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1907
-        width: 4565
-        height: 2594
+        y: 1993
+        width: 4502
+        height: 2508
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Daco_4693589_1
       rect:
         serializedVersion: 2
-        x: 4659
-        y: 1938
-        width: 6042
-        height: 2563
+        x: 4794
+        y: 1993
+        width: 5892
+        height: 1783
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: Daco_4693589_2
       rect:
         serializedVersion: 2
-        x: 2782
+        x: 3066
         y: 0
-        width: 5846
-        height: 1441
+        width: 5364
+        height: 1212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
